@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Gusttav Cabral - Oferta Especial</title>
+  <meta name="description" content="Gusttav Cabral - Realizando Sonhos! Deus seja louvado!" />
+  <link rel="icon" href="assets/logo.png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="container">
+      <!-- Video / Hero Section -->
+      <section class="hero-media-card" id="heroMediaCard">
+        <div class="video-container-wrap">
+          <video id="heroVideo" src="assets/video-gusttavo-upsell-22-09.mp4" playsinline autoplay loop muted preload="auto"
+            class="hero-video">
+            <source src="assets/video-gusttavo-upsell-22-09.mp4" type="video/mp4" />
+          </video>
+          <!-- Video Gradient Overlays -->
+          <div class="video-overlay"></div>
+          <!-- Top Floating Header -->
+          <div class="top-bar">
+            <div class="brand-badge">
+              <img src="assets/logo.png" alt="Gusttav Cabral" class="brand-logo-img" />
+            </div>
+            <div class="timer-badge" aria-label="Oferta termina em">
+              <span class="timer-dot"></span>
+              <span id="countdownTimer">05:00</span>
+            </div>
+          </div>
+          <!-- Live Badge -->
+          <div class="live-pill">
+            <span class="live-dot"></span>
+            <span class="live-text">AO VIVO</span>
+          </div>
+          <!-- Sound / Play Control Overlay -->
+          <div class="sound-toggle-wrap" id="soundToggleBtn">
+            <button type="button" aria-label="Tocar com som" class="sound-btn">
+              <span class="pulse-ring-1"></span>
+              <span class="pulse-ring-2"></span>
+              <span class="play-triangle" id="soundIcon"></span>
+            </button>
+            <div class="sound-pill">
+              <span id="soundPillText">🔊 Toca pra ouvir</span>
+            </div>
+          </div>
+          <!-- Pause/Resume State Indicator Overlay -->
+          <div class="video-state-overlay" id="videoStateOverlay" aria-hidden="true">
+            <div class="video-state-circle">
+              <span class="video-state-icon" id="videoStateIcon"></span>
+            </div>
+          </div>
+        </div>
+        <!-- Hero Text Details on Video -->
+        <div class="hero-content">
+          <div class="special-tag">
+            <span class="tag-line"></span>
+            <span class="tag-text">OFERTA ESPECIAL</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="white-text">Sua chance aumentou</span>
+            <span class="luck-neon-text">muito por aqui!</span>
+          </h1>
+          <p class="hero-subtitle">
+            ENCONTRAR O 1º TÍTULO POR AQUI É <span class="text-highlight">MUITO MAIS FÁCIL 🔥</span>
+          </p>
+          <!-- Custom Futuristic Luck Booster Card -->
+          <div class="custom-luck-card">
+            <!-- Ambient Glow Effect behind card -->
+            <div class="custom-luck-glow"></div>
+            <!-- Top Header Badge -->
+            <div class="custom-luck-top">
+              <div class="custom-luck-badge">
+                <span class="custom-badge-dot"></span>
+                <span class="custom-badge-text">VOCÊ ATIVOU MAIS SORTE!!</span>
+              </div>
+            </div>
+            <!-- Card Body: Radial Arc + Info Details -->
+            <div class="custom-luck-body">
+              <!-- Circular Turbo Radial Gauge -->
+              <div class="custom-gauge-wrap">
+                <svg class="custom-gauge-svg" viewBox="0 0 100 100" aria-hidden="true">
+                  <circle class="gauge-bg" cx="50" cy="50" r="42" />
+                  <circle class="gauge-fill" id="luckCircleProgress" cx="50" cy="50" r="42" />
+                </svg>
+                <div class="custom-gauge-center">
+                  <span class="custom-gauge-val" id="luckPercentVal">90%</span>
+                  <span class="custom-gauge-sub">CHANCE</span>
+                </div>
+              </div>
+              <!-- Content details -->
+              <div class="custom-luck-info">
+                <div class="custom-luck-title-row">
+                  <span class="custom-luck-icon">⚡</span>
+                  <span class="custom-luck-title">Nível de sorte</span>
+                  <span class="custom-luck-tag">TURBO</span>
+                </div>
+                <p class="custom-luck-desc">
+                  Você está muito perto de pegar o <span class="text-highlight">TÍTULO PREMIADO.</span>
+                </p>
+              </div>
+            </div>
+            <!-- Comparative Telemetry Visualizer -->
+            <div class="custom-telemetry-box">
+              <div class="telemetry-track-wrap">
+                <div class="telemetry-bar-bg">
+                  <div class="telemetry-bar-fill" id="luckBarFill" style="width: 90%;">
+                    <div class="telemetry-shimmer"></div>
+                    <div class="telemetry-head-glow"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Comparison Labels -->
+              <div class="telemetry-footer">
+                <div class="telemetry-item normal">
+                  <span class="telemetry-dot normal-dot"></span>
+                  <span class="telemetry-name">FLUXO NORMAL</span>
+                </div>
+                <div class="telemetry-item boost">
+                  <span class="telemetry-dot boost-dot"></span>
+                  <span class="telemetry-name">ESTA PÁGINA · MUITO MAIOR</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Prize Feature Section -->
+      <section class="prize-section">
+        <!-- iPhone 18 Pro Max Bordô Auto Carousel Card -->
+        <a href="https://gusttavocabral.com.br/campanha/iphone18promaxqueridinhodomomento?&afiliado=ZPQT7B03V3"
+          target="_blank" rel="noopener noreferrer" class="prize-card casa-carousel-card"
+          aria-label="IPHONE 18 PRO MAX BORDO - Aproveitar Oferta">
+          <div class="prize-image-wrap casa-slider-wrap" id="casaSliderWrap">
+            <span class="prize-badge">PRÊMIO PRINCIPAL</span>
+            <div class="casa-slides">
+              <div class="casa-slide active">
+                <img src="assets/premio-iphone-1.jpg" alt="iPhone 18 Pro Max Bordô" class="prize-img" loading="lazy" />
+              </div>
+              <div class="casa-slide">
+                <img src="assets/premio-iphone-3.jpg" alt="iPhone 18 Pro Max Bordô com Kit de Acessórios" class="prize-img" loading="lazy" />
+              </div>
+              <div class="casa-slide">
+                <img src="assets/premio-iphone-2.jpg" alt="iPhone 18 Pro Max Bordô Lacrado" class="prize-img" loading="lazy" />
+              </div>
+            </div>
+            <!-- Slide Progress Indicators / Dots -->
+            <div class="casa-indicators">
+              <span class="casa-dot active" data-index="0"></span>
+              <span class="casa-dot" data-index="1"></span>
+              <span class="casa-dot" data-index="2"></span>
+            </div>
+          </div>
+          <div class="prize-card-info">
+            <h2 class="prize-title">IPHONE 18 PRO MAX BORDO</h2>
+            <p class="prize-subtitle">Participe agora e concorra!</p>
+          </div>
+        </a>
+        <!-- Urgency Alert Banner -->
+        <div class="urgency-banner">
+          <div class="urgency-icon-wrap">
+            <i data-lucide="alert-triangle" class="urgency-icon"></i>
+          </div>
+          <p class="urgency-text">
+            Saindo daqui, sua chance volta pra 1 em 50. Esse atalho é só desta página.
+          </p>
+        </div>
+      </section>
+      <!-- Bottom Floating / Sticky CTA -->
+      <div class="cta-fade-gradient" aria-hidden="true"></div>
+      <div class="fixed-cta-wrapper">
+        <a href="https://gusttavocabral.com.br/campanha/iphone18promaxqueridinhodomomento?&afiliado=ZPQT7B03V3"
+          target="_blank" rel="noopener noreferrer" class="cta-button">
+          <span class="cta-label">APROVEITAR AGORA</span>
+        </a>
+        <p class="cta-subtext">Aproveite a condição especial.</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
