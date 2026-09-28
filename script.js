@@ -203,4 +203,60 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Draw Countdown Timer (Today at 22:00 Brasília Time / UTC-3)
+  const drawHoursEl = document.getElementById('drawHours');
+  const drawMinutesEl = document.getElementById('drawMinutes');
+  const drawSecondsEl = document.getElementById('drawSeconds');
+
+  function updateDrawCountdown() {
+    const now = new Date();
+    let bsbHour = 0, bsbMin = 0, bsbSec = 0;
+
+    try {
+      // Intl format accurate to America/Sao_Paulo (UTC-3)
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Sao_Paulo',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: false
+      });
+      const parts = formatter.formatToParts(now);
+      parts.forEach(p => {
+        if (p.type === 'hour') bsbHour = parseInt(p.value, 10);
+        if (p.type === 'minute') bsbMin = parseInt(p.value, 10);
+        if (p.type === 'second') bsbSec = parseInt(p.value, 10);
+      });
+      if (bsbHour === 24) bsbHour = 0;
+    } catch (e) {
+      // Fallback calculation for standard UTC-3
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const bsb = new Date(utc - (3 * 3600000));
+      bsbHour = bsb.getHours();
+      bsbMin = bsb.getMinutes();
+      bsbSec = bsb.getSeconds();
+    }
+
+    const currentSecondsInDay = (bsbHour * 3600) + (bsbMin * 60) + bsbSec;
+    const targetSecondsInDay = 22 * 3600; // 22:00:00
+
+    let diffSeconds = targetSecondsInDay - currentSecondsInDay;
+
+    if (diffSeconds <= 0) {
+      if (drawHoursEl) drawHoursEl.textContent = '00';
+      if (drawMinutesEl) drawMinutesEl.textContent = '00';
+      if (drawSecondsEl) drawSecondsEl.textContent = '00';
+    } else {
+      const h = Math.floor(diffSeconds / 3600);
+      const m = Math.floor((diffSeconds % 3600) / 60);
+      const s = diffSeconds % 60;
+      if (drawHoursEl) drawHoursEl.textContent = String(h).padStart(2, '0');
+      if (drawMinutesEl) drawMinutesEl.textContent = String(m).padStart(2, '0');
+      if (drawSecondsEl) drawSecondsEl.textContent = String(s).padStart(2, '0');
+    }
+  }
+
+  updateDrawCountdown();
+  setInterval(updateDrawCountdown, 1000);
 });

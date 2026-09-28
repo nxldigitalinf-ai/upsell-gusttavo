@@ -793,6 +793,175 @@ body {
 }
 
 /* ==========================================================================
+   DRAW COUNTDOWN CARD (RESULTADO ÀS 22H HOJE)
+   ========================================================================== */
+
+.draw-countdown-card {
+  position: relative;
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 16px 16px 14px;
+  border-radius: 22px;
+  background: linear-gradient(155deg, rgba(14, 36, 20, 0.96) 0%, rgba(8, 20, 12, 0.98) 60%, rgba(4, 12, 6, 1) 100%);
+  border: 1px solid rgba(118, 255, 3, 0.4);
+  box-shadow:
+    0 12px 34px rgba(0, 0, 0, 0.8),
+    0 0 22px rgba(118, 255, 3, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.draw-card-glow {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 90px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(118, 255, 3, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+  animation: glowFloat 4s ease-in-out infinite alternate;
+}
+
+.draw-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.draw-live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.draw-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #FF3B30;
+  box-shadow: 0 0 10px #FF3B30, 0 0 18px rgba(255, 59, 48, 0.7);
+  animation: beaconPulse 1.2s infinite ease-in-out;
+}
+
+.draw-header-title {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.draw-time-tag {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(118, 255, 3, 0.16);
+  border: 1px solid rgba(118, 255, 3, 0.65);
+  color: #76FF03;
+  text-shadow: 0 0 8px rgba(118, 255, 3, 0.6);
+  box-shadow: 0 0 12px rgba(118, 255, 3, 0.25);
+  white-space: nowrap;
+}
+
+.draw-timer-grid {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 10px 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(118, 255, 3, 0.2);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.draw-time-block {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 4px 5px;
+  background: linear-gradient(180deg, rgba(24, 45, 28, 0.9) 0%, rgba(10, 22, 13, 0.95) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(118, 255, 3, 0.35);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.draw-digit {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: #CCFF00;
+  text-shadow: 0 0 14px rgba(204, 255, 0, 0.65), 0 0 2px #FFFFFF;
+}
+
+.draw-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 4px;
+}
+
+.draw-colon {
+  font-size: 22px;
+  font-weight: 900;
+  color: #76FF03;
+  text-shadow: 0 0 10px rgba(118, 255, 3, 0.8);
+  animation: colonBlink 1s ease-in-out infinite;
+  margin-top: -6px;
+  user-select: none;
+}
+
+@keyframes colonBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+.draw-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.draw-footer-icon {
+  font-size: 11px;
+}
+
+.draw-footer-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
    PRIZE FEATURE CARD & URGENCY BANNER
    ========================================================================== */
 
